@@ -1,4 +1,4 @@
-# terraform-aws-cloudwatch-logs
+# terraform-aws-cloudwatch-logs [![Build Status](https://travis-ci.org/cloudposse/terraform-aws-cloudwatch-logs.svg)](https://travis-ci.org/cloudposse/terraform-aws-cloudwatch-logs)
 
 Terraform module for creation streams and group for them.
 
