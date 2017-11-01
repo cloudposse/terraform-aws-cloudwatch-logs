@@ -45,3 +45,18 @@ variable "stream_names" {
   type        = "list"
   description = "Names of streams"
 }
+
+variable "path" {
+  default     = "/"
+  description = "Path in which to create the user"
+}
+
+variable "force_destroy" {
+  default     = "false"
+  description = "Force destroy user. Possible values: true or false"
+}
+
+variable "username" {
+  default     = ""
+  description = "AWS username which will be created"
+}
