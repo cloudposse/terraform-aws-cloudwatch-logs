@@ -24,7 +24,7 @@ output "user_id" {
 }
 
 output "access_key_id" {
-  value       = "${aws_iam_access_key.default.}"
+  value       = "${aws_iam_access_key.default.id}"
   description = "Access key ID"
 }
 
