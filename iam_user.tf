@@ -30,11 +30,14 @@ data "aws_iam_policy_document" "user" {
       "logs:DescribeSubscriptionFilters",
       "logs:FilterLogEvents",
       "logs:GetLogEvents",
+      "logs:CreateLogGroup",
+      "logs:CreateLogStream",
+      "logs:PutLogEvents",
+      "logs:DescribeLogStreams",
+      "logs:CreateLogStream",
+      "logs:DeleteLogStream",
     ]
 
-    resources = [
-      "${aws_cloudwatch_log_group.default.arn}",
-      "${join(",", aws_cloudwatch_log_stream.default.*.arn)}",
-    ]
+    resources = ["*"]
   }
 }
