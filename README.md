@@ -24,19 +24,17 @@ module "cloudwatch_log" {
 | `tags`              |  `{}`   | Additional tags  (e.g. `map("BusinessUnit","XYZ")`              |    No    |
 | `retention_in_days` |  `30`   | Number of days you want to retain log events in the log group   |    No    |
 | `stream_names`      |  `[]`   | List names of streams                                           |   Yes    |
-| `username`          |   ``    | AWS username which will be created                              |    No    |
-| `force_destroy`     | `false` | Force destroy user. Possible values: true or false              |    No    |
+| `create_user`       | `true`  | Flag for creation user                                          |    No    |
 
 
 ## Outputs
 
-| Name                | Description          |
-|:--------------------|:---------------------|
-| `access_key_id`     | Access key ID        |
-| `access_key_secret` | Secret access key    |
-| `access_key_status` | Access key status    |
-| `log_group_arn`     | ARN of the log group |
-| `stream_arn`        | ARN ofthe log stream |
-| `user_arn`          | ARN of AWS user      |
-| `user_id`           | ID of user           |
-| `user_name`         | AWS username         |
+| Name              | Description          |
+|:------------------|:---------------------|
+| access_key_id     | Access key ID        |
+| log_group_arn     | ARN of the log group |
+| secret_access_key | Secret access key    |
+| stream_arn        | ARN ofthe log stream |
+| user_arn          | ARN of AWS user      |
+| user_name         | AWS username         |
+| user_unique_id    | ID of user           |

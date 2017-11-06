@@ -1,24 +1,5 @@
-resource "aws_iam_user" "default" {
-  count         = "${var.username != "" ? 1 : 0}"
-  name          = "${var.username}"
-  path          = "${var.path}"
-  force_destroy = "${var.force_destroy }"
-}
-
-resource "aws_iam_access_key" "default" {
-  count = "${var.username != "" ? 1 : 0}"
-  user  = "${aws_iam_user.default.name}"
-}
-
-resource "aws_iam_user_policy" "default" {
-  count  = "${var.username != "" ? 1 : 0}"
-  name   = "${var.username}"
-  user   = "${aws_iam_user.default.name}"
-  policy = "${data.aws_iam_policy_document.user.json}"
-}
-
 data "aws_iam_policy_document" "user" {
-  count = "${var.username != "" ? 1 : 0}"
+  count = "${var.create_user == "true" ? 1 : 0}"
 
   statement {
     actions = [
@@ -40,4 +21,13 @@ data "aws_iam_policy_document" "user" {
 
     resources = ["*"]
   }
+}
+
+module "user" {
+  source      = "git::https://github.com/cloudposse/terraform-aws-iam-system-user.git?ref=tags/0.2.0"
+  namespace   = "${var.namespace}"
+  stage       = "${var.stage}"
+  name        = "${var.name}"
+  policy      = "${data.aws_iam_policy_document.user.json}"
+  create_user = "${var.create_user}"
 }

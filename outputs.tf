@@ -9,31 +9,26 @@ output "stream_arn" {
 }
 
 output "user_name" {
-  value       = "${aws_iam_user.default.name}"
   description = "AWS username"
+  value       = "${module.user.user_name}"
 }
 
 output "user_arn" {
-  value       = "${aws_iam_user.default.arn}"
   description = "ARN of AWS user"
+  value       = "${module.user.user_arn}"
 }
 
-output "user_id" {
-  value       = "${aws_iam_user.default.unique_id}"
+output "user_unique_id" {
   description = "ID of user"
+  value       = "${module.user.user_unique_id}"
 }
 
 output "access_key_id" {
-  value       = "${aws_iam_access_key.default.id}"
   description = "Access key ID"
+  value       = "${module.user.access_key_id}"
 }
 
-output "access_key_secret" {
-  value       = "${aws_iam_access_key.default.secret}"
+output "secret_access_key" {
   description = "Secret access key"
-}
-
-output "access_key_status" {
-  value       = "${aws_iam_access_key.default.status}"
-  description = "Access key status"
+  value       = "${module.user.secret_access_key}"
 }

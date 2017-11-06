@@ -5,10 +5,12 @@ variable "name" {
 
 variable "namespace" {
   description = "Namespace (e.g. `cp` or `cloudposse`)"
+  default     = "cp"
   type        = "string"
 }
 
 variable "stage" {
+  default     = "dev"
   description = "Stage (e.g. `prod`, `dev`, `staging`)"
   type        = "string"
 }
@@ -42,6 +44,7 @@ variable "retention_in_days" {
 }
 
 variable "stream_names" {
+  default     = ["pfsense", "ubuntu"]
   type        = "list"
   description = "Names of streams"
 }
@@ -56,7 +59,7 @@ variable "force_destroy" {
   description = "Force destroy user. Possible values: true or false"
 }
 
-variable "username" {
-  default     = ""
-  description = "AWS username which will be created"
+variable "create_user" {
+  description = "Flag for creation user"
+  default     = "true"
 }
