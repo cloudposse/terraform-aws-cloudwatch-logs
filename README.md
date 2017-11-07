@@ -14,27 +14,27 @@ module "cloudwatch_log" {
 
 ## Inputs
 
-| Name                | Default | Description                                                     | Required |
-|:--------------------|:-------:|:----------------------------------------------------------------|:--------:|
-| `namespace`         |   ``    | Namespace (e.g. `cp` or `cloudposse`)                           |   Yes    |
-| `stage`             |   ``    | Stage (e.g. `prod`, `dev`, `staging`)                           |   Yes    |
-| `name`              |   ``    | Name  (e.g. `bastion` or `db`)                                  |    No    |
-| `delimiter`         |   `-`   | Delimiter to be used between `name`, `namespace`, `stage`, etc. |    No    |
-| `attributes`        |  `[]`   | Additional attributes (e.g. `policy` or `role`)                 |    No    |
-| `tags`              |  `{}`   | Additional tags  (e.g. `map("BusinessUnit","XYZ")`              |    No    |
-| `retention_in_days` |  `30`   | Number of days you want to retain log events in the log group   |    No    |
-| `stream_names`      |  `[]`   | List names of streams                                           |   Yes    |
-| `create_user`       | `true`  | Flag for creation user                                          |    No    |
+| Name                |    Default    | Description                                                     | Required |
+|:--------------------|:-------------:|:----------------------------------------------------------------|:--------:|
+| `namespace`         |      ``       | Namespace (e.g. `cp` or `cloudposse`)                           |   Yes    |
+| `stage`             |      ``       | Stage (e.g. `prod`, `dev`, `staging`)                           |   Yes    |
+| `name`              |      ``       | Name  (e.g. `bastion` or `db`)                                  |    No    |
+| `delimiter`         |      `-`      | Delimiter to be used between `name`, `namespace`, `stage`, etc. |    No    |
+| `attributes`        |     `[]`      | Additional attributes (e.g. `policy` or `role`)                 |    No    |
+| `tags`              |     `{}`      | Additional tags  (e.g. `map("BusinessUnit","XYZ")`              |    No    |
+| `retention_in_days` |     `30`      | Number of days you want to retain log events in the log group   |    No    |
+| `stream_names`      | `["default"]` | List names of streams                                           |    No    |
+| `user_enabled`      |    `true`     | Flag for creation user                                          |    No    |
 
 
 ## Outputs
 
-| Name              | Description          |
-|:------------------|:---------------------|
-| access_key_id     | Access key ID        |
-| log_group_arn     | ARN of the log group |
-| secret_access_key | Secret access key    |
-| stream_arn        | ARN ofthe log stream |
-| user_arn          | ARN of AWS user      |
-| user_name         | AWS username         |
-| user_unique_id    | ID of user           |
+| Name                | Description           |
+|:--------------------|:----------------------|
+| `access_key_id`     | Access key ID         |
+| `log_group_arn`     | ARN of the log group  |
+| `secret_access_key` | Secret access key     |
+| `stream_arn`        | ARN of the log stream |
+| `user_arn`          | ARN of AWS user       |
+| `user_name`         | AWS username          |
+| `user_unique_id`    | ID of user            |

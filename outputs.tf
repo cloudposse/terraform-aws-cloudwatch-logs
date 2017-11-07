@@ -5,7 +5,7 @@ output "log_group_arn" {
 
 output "stream_arn" {
   value       = "${aws_cloudwatch_log_stream.default.*.arn}"
-  description = "ARN ofthe log stream"
+  description = "ARN of the log stream"
 }
 
 output "user_name" {

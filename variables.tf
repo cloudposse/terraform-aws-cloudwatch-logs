@@ -44,7 +44,7 @@ variable "retention_in_days" {
 }
 
 variable "stream_names" {
-  default     = ["pfsense", "ubuntu"]
+  default     = ["default"]
   type        = "list"
   description = "Names of streams"
 }
@@ -59,7 +59,7 @@ variable "force_destroy" {
   description = "Force destroy user. Possible values: true or false"
 }
 
-variable "create_user" {
+variable "user_enabled" {
   description = "Flag for creation user"
   default     = "true"
 }
