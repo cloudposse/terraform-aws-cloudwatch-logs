@@ -38,3 +38,4 @@ module "cloudwatch_log" {
 | `user_arn`          | ARN of AWS user       |
 | `user_name`         | AWS username          |
 | `user_unique_id`    | ID of user            |
+
