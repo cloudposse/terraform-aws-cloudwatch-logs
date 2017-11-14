@@ -1,5 +1,5 @@
 data "aws_region" "default" {
-  current = true
+  current = "true"
 }
 
 module "log_group_label" {

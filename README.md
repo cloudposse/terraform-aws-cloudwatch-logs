@@ -25,7 +25,7 @@ module "cloudwatch_log" {
 | `retention_in_days` |     `30`      | Number of days you want to retain log events in the log group   |    No    |
 | `stream_names`      | `["default"]` | List names of streams                                           |    No    |
 | `user_enabled`      |    `true`     | Flag for creation user                                          |    No    |
-
+| `region`            |      ``       | AWS region, by default used the region of caller                |    No    |
 
 ## Outputs
 
