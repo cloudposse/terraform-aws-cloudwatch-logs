@@ -22,8 +22,7 @@ data "aws_iam_policy_document" "log" {
     ]
 
     resources = [
-      "${aws_cloudwatch_log_group.default.arn}",
-      "${join(",", aws_cloudwatch_log_stream.default.*.arn)}",
+      "${join(",", compact(concat(list(aws_cloudwatch_log_group.default.arn), aws_cloudwatch_log_stream.default.*.arn)))}",
     ]
   }
 }

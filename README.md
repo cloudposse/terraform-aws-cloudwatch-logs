@@ -1,4 +1,4 @@
-# terraform-aws-cloudwatch-logs [![Build Status](https://travis-ci.org/cloudposse/terraform-aws-cloudwatch-logs.svg)](https://travis-ci.org/cloudposse/terraform-aws-cloudwatch-logs)
+# terraform-aws-cloudwatch-logs [![Build Status](https://travis-ci.org/cloudposse/terraform-aws-cloudwatch-logs.svg?branch=master)](https://travis-ci.org/cloudposse/terraform-aws-cloudwatch-logs)
 
 Terraform module for creation streams and group for them.
 
@@ -38,3 +38,7 @@ module "cloudwatch_log" {
 | `user_arn`          | ARN of AWS user       |
 | `user_name`         | AWS username          |
 | `user_unique_id`    | ID of user            |
+
+## License
+
+Apache 2 License. See [`LICENSE`](LICENSE) for full details.
