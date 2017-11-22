@@ -32,3 +32,11 @@ output "secret_access_key" {
   description = "Secret access key"
   value       = "${module.user.secret_access_key}"
 }
+
+output "log_group_name" {
+  value = "${aws_cloudwatch_log_group.default.name}"
+}
+
+output "log_stream_name" {
+  value = "${aws_cloudwatch_log_stream.default.*.name}"
+}
