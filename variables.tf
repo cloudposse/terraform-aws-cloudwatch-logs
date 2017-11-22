@@ -5,12 +5,10 @@ variable "name" {
 
 variable "namespace" {
   description = "Namespace (e.g. `cp` or `cloudposse`)"
-  default     = "cp"
   type        = "string"
 }
 
 variable "stage" {
-  default     = "dev"
   description = "Stage (e.g. `prod`, `dev`, `staging`)"
   type        = "string"
 }
