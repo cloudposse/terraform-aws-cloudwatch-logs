@@ -3,7 +3,7 @@ output "log_group_arn" {
   description = "ARN of the log group"
 }
 
-output "stream_arn" {
+output "stream_arns" {
   value       = "${aws_cloudwatch_log_stream.default.*.arn}"
   description = "ARN of the log stream"
 }
@@ -34,9 +34,11 @@ output "secret_access_key" {
 }
 
 output "log_group_name" {
-  value = "${aws_cloudwatch_log_group.default.name}"
+  description = "Name of log group"
+  value       = "${aws_cloudwatch_log_group.default.name}"
 }
 
-output "log_stream_name" {
-  value = "${aws_cloudwatch_log_stream.default.*.name}"
+output "log_stream_names" {
+  description = "Name of log streams"
+  value       = "${aws_cloudwatch_log_stream.default.*.name}"
 }

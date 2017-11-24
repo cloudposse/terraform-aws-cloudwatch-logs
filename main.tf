@@ -8,7 +8,7 @@ module "log_group_label" {
   name       = "${var.name}"
   stage      = "${var.stage}"
   delimiter  = "${var.delimiter}"
-  attributes = "${compact(concat(var.attributes, list("log")))}"
+  attributes = "${compact(concat(var.attributes, list("log"), list("group")))}"
   tags       = "${var.tags}"
 }
 
