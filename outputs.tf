@@ -40,5 +40,5 @@ output "log_group_name" {
 
 output "log_stream_names" {
   description = "Name of log streams"
-  value       = "${aws_cloudwatch_log_stream.default.*.name}"
+  value       = ["${aws_cloudwatch_log_stream.default.*.name}"]
 }
