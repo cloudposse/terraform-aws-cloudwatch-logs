@@ -24,7 +24,7 @@ data "aws_iam_policy_document" "user" {
 }
 
 module "user" {
-  source    = "git::https://github.com/cloudposse/terraform-aws-iam-system-user.git?ref=tags/0.2.0"
+  source    = "git::https://github.com/cloudposse/terraform-aws-iam-system-user.git?ref=tags/0.2.1"
   namespace = "${var.namespace}"
   stage     = "${var.stage}"
   name      = "${var.name}"
