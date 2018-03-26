@@ -1,6 +1,4 @@
 data "aws_iam_policy_document" "user" {
-  count = "${var.user_enabled == "true" ? 1 : 0}"
-
   statement {
     actions = [
       "logs:DescribeDestinations",
