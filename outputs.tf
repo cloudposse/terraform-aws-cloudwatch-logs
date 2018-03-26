@@ -10,7 +10,7 @@ output "stream_arns" {
 
 output "user_name" {
   description = "AWS username"
-  value       = "${module.user.user_name}"
+  value       = "${var.user_enabled == "true" ? module.user.user_name : null}"
 }
 
 output "user_arn" {
