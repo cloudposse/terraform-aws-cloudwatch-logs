@@ -35,6 +35,7 @@ module "cloudwatch_log" {
 | `access_key_id`     | Access key ID         |
 | `secret_access_key` | Secret access key     |
 | `stream_arns`       | ARN of the log stream |
+| `role_name`         | IAM Role name         |
 | `user_arn`          | ARN of AWS user       |
 | `user_name`         | AWS username          |
 | `user_unique_id`    | ID of user            |
