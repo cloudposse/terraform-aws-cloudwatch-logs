@@ -30,7 +30,6 @@ resource "aws_cloudwatch_log_stream" "default" {
   log_group_name = "${aws_cloudwatch_log_group.default.name}"
 }
 
-
 data "aws_iam_policy_document" "log_agent" {
   statement {
     actions = [
