@@ -4,7 +4,7 @@
   --- Make changes instead to `.README.md` and rebuild.
   --->
 
-Terraform module for creation streams and group for them.
+Terraform module for creation of CloudWatch Log Streams and Log Groups for use with Fluentd.
 
 ## Usage
 
