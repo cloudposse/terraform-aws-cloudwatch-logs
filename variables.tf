@@ -31,33 +31,29 @@ variable "tags" {
   description = "Additional tags (e.g. map(`BusinessUnit`,`XYZ`)"
 }
 
-variable "region" {
-  description = "AWS region"
-  default     = ""
-}
-
 variable "retention_in_days" {
   description = "Number of days you want to retain log events in the log group"
   default     = "30"
 }
 
 variable "stream_names" {
-  default     = ["default"]
+  default     = []
   type        = "list"
   description = "Names of streams"
 }
 
-variable "path" {
-  default     = "/"
-  description = "Path in which to create the user"
+variable "trusted_roles" {
+  default     = []
+  type        = "list"
+  description = "Roles allow to assume role"
 }
 
-variable "force_destroy" {
-  default     = "false"
-  description = "Force destroy user. Possible values: true or false"
-}
+variable "additional_permissions" {
+  default = [
+    "logs:CreateLogStream",
+    "logs:DeleteLogStream",
+  ]
 
-variable "user_enabled" {
-  description = "Flag for creation user"
-  default     = "true"
+  type        = "list"
+  description = "Additional permissions granted to assumed role"
 }
