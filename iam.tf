@@ -1,39 +1,66 @@
-data "aws_iam_policy_document" "log_assume" {
+data "aws_iam_policy_document" "role_trust" {
   statement {
     actions = ["sts:AssumeRole"]
 
     principals {
       type        = "Service"
-      identifiers = ["logs.${length(var.region) > 0 ? var.region: data.aws_region.default.name}.amazonaws.com"]
+      identifiers = ["ec2.amazonaws.com"]
+    }
+  }
+
+  statement {
+    actions = ["sts:AssumeRole"]
+
+    principals {
+      type = "AWS"
+
+      identifiers = ["${var.trusted_roles}"]
     }
   }
 }
 
-data "aws_iam_policy_document" "log" {
+resource "aws_iam_role" "default" {
+  name               = "${module.label.id}"
+  assume_role_policy = "${data.aws_iam_policy_document.role_trust.json}"
+}
+
+resource "aws_iam_policy" "default" {
+  name   = "${module.label.id}"
+  policy = "${data.aws_iam_policy_document.log_agent.json}"
+}
+
+data "aws_iam_policy_document" "log_agent" {
   statement {
     actions = [
-      "logs:CreateLogGroup",
-      "logs:CreateLogStream",
-      "logs:PutLogEvents",
       "logs:DescribeLogGroups",
       "logs:DescribeLogStreams",
-      "logs:CreateLogStream",
-      "logs:DeleteLogStream",
+    ]
+
+    resources = ["*"]
+  }
+
+  statement {
+    actions = [
+      "logs:PutLogEvents",
     ]
 
     resources = [
-      "${join(",", compact(concat(list(aws_cloudwatch_log_group.default.arn), aws_cloudwatch_log_stream.default.*.arn)))}",
+      "${aws_cloudwatch_log_group.default.arn}",
+    ]
+  }
+
+  statement {
+    actions = [
+      "${var.additional_permissions}",
+    ]
+
+    resources = [
+      "${aws_cloudwatch_log_group.default.arn}",
     ]
   }
 }
 
-resource "aws_iam_role" "log" {
-  name               = "${module.log_group_label.id}"
-  assume_role_policy = "${data.aws_iam_policy_document.log_assume.json}"
-}
-
-resource "aws_iam_role_policy" "log" {
-  name   = "${module.log_group_label.id}"
-  role   = "${aws_iam_role.log.id}"
-  policy = "${data.aws_iam_policy_document.log.json}"
+resource "aws_iam_role_policy_attachment" "default" {
+  role       = "${aws_iam_role.default.name}"
+  policy_arn = "${aws_iam_policy.default.arn}"
 }
