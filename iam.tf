@@ -14,7 +14,7 @@ data "aws_iam_policy_document" "role_trust" {
     principals {
       type = "AWS"
 
-      identifiers = []
+      identifiers = ["${var.trusted_roles}"]
     }
   }
 }
