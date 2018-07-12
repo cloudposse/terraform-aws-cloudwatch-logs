@@ -1,0 +1,62 @@
+---
+#
+# This is the canonical configuration for the `README.md`
+# Run `make readme` to rebuild the `README.md`
+#
+
+# Name of this project
+name: terraform-aws-cloudwatch-logs
+
+# Logo for this project
+#logo: docs/logo.png
+
+# License of this project
+license: "APACHE2"
+
+# Canonical GitHub repo
+github_repo: cloudposse/terraform-aws-cloudwatch-logs
+
+# Badges to display
+badges:
+  - name: "Build Status"
+    image: "https://travis-ci.org/cloudposse/terraform-aws-cloudwatch-logs.svg?branch=master"
+    url: "https://travis-ci.org/cloudposse/terraform-aws-cloudwatch-logs"
+  - name: "Latest Release"
+    image: "https://img.shields.io/github/release/cloudposse/terraform-aws-cloudwatch-logs.svg"
+    url: "https://github.com/cloudposse/terraform-aws-cloudwatch-logs/releases/latest"
+  - name: "Slack Community"
+    image: "https://slack.cloudposse.com/badge.svg"
+    url: "https://slack.cloudposse.com"
+
+related:
+  - name: "terraform-aws-cloudwatch-flow-logs"
+    description: "Terraform module for enabling flow logs for vpc and subnets."
+    url: "https://github.com/cloudposse/terraform-aws-cloudwatch-flow-logs"
+  - name: "terraform-aws-ecs-web-app"
+    description: "Terraform module that implements a web app on ECS and supporting AWS resources."
+    url: "https://github.com/cloudposse/terraform-aws-ecs-web-app"
+
+# Short description of this project
+description: |-
+  Terraform module for creation of CloudWatch Log Streams and Log Groups for use with Fluentd.
+
+# How to use this project
+usage: |-
+  ```terraform
+  module "cloudwatch_log" {
+    namespace    = "${var.namespace}"
+    stage        = "${var.stage}"
+    stream_names = ["kafka-instance-1", "kafka-instance-2"]
+  }
+  ```
+
+include:
+  - "docs/targets.md"
+  - "docs/terraform.md"
+
+# Contributors to this project
+contributors:
+  - name: "Igor Rodionov"
+    github: "goruha"
+  - name: "Vladimir"
+    github: "SweetOps"
