@@ -7,6 +7,16 @@
 # Name of this project
 name: terraform-aws-cloudwatch-logs
 
+# Tags of this project
+tags:
+  - aws
+  - terraform
+  - logging
+
+# Categories of this project
+categories:
+  - terraform-logging
+
 # Logo for this project
 #logo: docs/logo.png
 
