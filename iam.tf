@@ -1,32 +1,23 @@
-data "aws_iam_policy_document" "role_trust" {
-  statement {
-    actions = ["sts:AssumeRole"]
+module "role" {
+  source = "git::https://github.com/cloudposse/terraform-aws-iam-role.git?ref=tags/0.4.0"
 
-    principals {
-      type        = "Service"
-      identifiers = ["ec2.amazonaws.com"]
-    }
-  }
+  enabled = "${var.enabled}"
 
-  statement {
-    actions = ["sts:AssumeRole"]
+  namespace  = "${var.namespace}"
+  name       = "${var.name}"
+  stage      = "${var.stage}"
+  delimiter  = "${var.delimiter}"
+  attributes = "${compact(concat(var.attributes, list("log"), list("group")))}"
+  tags       = "${var.tags}"
 
-    principals {
-      type = "AWS"
+  role_description   = "Cloudwatch logs role"
+  policy_description = "Cloudwatch logs policy"
 
-      identifiers = ["${var.trusted_roles}"]
-    }
-  }
-}
+  principals = "${var.principals}"
 
-resource "aws_iam_role" "default" {
-  name               = "${module.label.id}"
-  assume_role_policy = "${data.aws_iam_policy_document.role_trust.json}"
-}
-
-resource "aws_iam_policy" "default" {
-  name   = "${module.label.id}"
-  policy = "${data.aws_iam_policy_document.log_agent.json}"
+  policy_documents = [
+    "${data.aws_iam_policy_document.log_agent.json}",
+  ]
 }
 
 data "aws_iam_policy_document" "log_agent" {
@@ -45,7 +36,7 @@ data "aws_iam_policy_document" "log_agent" {
     ]
 
     resources = [
-      "${aws_cloudwatch_log_group.default.arn}",
+      "${aws_cloudwatch_log_group.default.*.arn}",
     ]
   }
 
@@ -55,12 +46,7 @@ data "aws_iam_policy_document" "log_agent" {
     ]
 
     resources = [
-      "${aws_cloudwatch_log_group.default.arn}",
+      "${aws_cloudwatch_log_group.default.*.arn}",
     ]
   }
-}
-
-resource "aws_iam_role_policy_attachment" "default" {
-  role       = "${aws_iam_role.default.name}"
-  policy_arn = "${aws_iam_policy.default.arn}"
 }

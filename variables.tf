@@ -1,3 +1,8 @@
+variable "enabled" {
+  description = "If true, deploy the resources for the module"
+  default     = "true"
+}
+
 variable "name" {
   default     = ""
   description = "Name  (e.g. `bastion` or `db`)"
@@ -42,10 +47,13 @@ variable "stream_names" {
   description = "Names of streams"
 }
 
-variable "trusted_roles" {
-  default     = []
-  type        = "list"
-  description = "Roles allow to assume role"
+variable "principals" {
+  type        = "map"
+  description = "Map of service name as key and a list of ARNs to allow assuming the role as value. (e.g. map(`AWS`, list(`arn:aws:iam:::role/admin`)))"
+
+  default = {
+    "Service" = ["ec2.amazonaws.com"]
+  }
 }
 
 variable "additional_permissions" {
