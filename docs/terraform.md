@@ -6,6 +6,7 @@
 | attributes | Additional attributes (e.g. `policy` or `role`) | list | `<list>` | no |
 | delimiter | Delimiter to be used between `name`, `namespace`, `stage`, etc. | string | `-` | no |
 | enabled | If true, deploy the resources for the module | string | `true` | no |
+| kms_key_arn | The ARN of the KMS Key to use when encrypting log data. Please note, after the AWS KMS CMK is disassociated from the log group, AWS CloudWatch Logs stops encrypting newly ingested data for the log group. All previously ingested data remains encrypted, and AWS CloudWatch Logs requires permissions for the CMK whenever the encrypted data is requested. | string | `` | no |
 | name | Name  (e.g. `bastion` or `db`) | string | `` | no |
 | namespace | Namespace (e.g. `cp` or `cloudposse`) | string | - | yes |
 | principals | Map of service name as key and a list of ARNs to allow assuming the role as value. (e.g. map(`AWS`, list(`arn:aws:iam:::role/admin`))) | map | `<map>` | no |

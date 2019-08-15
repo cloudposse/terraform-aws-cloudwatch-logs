@@ -10,8 +10,8 @@ module "role" {
   attributes = "${compact(concat(var.attributes, list("log"), list("group")))}"
   tags       = "${var.tags}"
 
-  role_description   = "Cloudwatch logs role"
-  policy_description = "Cloudwatch logs policy"
+  role_description   = "Cloudwatch ${module.label.id} logs role"
+  policy_description = "Cloudwatch ${module.label.id} logs policy"
 
   principals = "${var.principals}"
 
