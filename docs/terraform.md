@@ -18,9 +18,9 @@
 
 | Name | Description |
 |------|-------------|
-| assumed_role_arn | ARN of role to assume |
-| assumed_role_name | Name of role to assume |
 | log_group_arn | ARN of the log group |
 | log_group_name | Name of log group |
+| role_arn | ARN of role to assume |
+| role_name | Name of role to assume |
 | stream_arns | ARN of the log stream |
 
