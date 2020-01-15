@@ -1,22 +1,22 @@
 module "role" {
   source = "git::https://github.com/cloudposse/terraform-aws-iam-role.git?ref=tags/0.4.0"
 
-  enabled = "${var.enabled}"
+  enabled = var.enabled
 
-  namespace  = "${var.namespace}"
-  name       = "${var.name}"
-  stage      = "${var.stage}"
-  delimiter  = "${var.delimiter}"
-  attributes = "${compact(concat(var.attributes, list("log"), list("group")))}"
-  tags       = "${var.tags}"
+  namespace  = var.namespace
+  name       = var.name
+  stage      = var.stage
+  delimiter  = var.delimiter
+  attributes = compact(concat(var.attributes, ["log"], ["group"]))
+  tags       = var.tags
 
   role_description   = "Cloudwatch ${module.label.id} logs role"
   policy_description = "Cloudwatch ${module.label.id} logs policy"
 
-  principals = "${var.principals}"
+  principals = var.principals
 
   policy_documents = [
-    "${data.aws_iam_policy_document.log_agent.json}",
+    data.aws_iam_policy_document.log_agent.json,
   ]
 }
 
@@ -35,18 +35,13 @@ data "aws_iam_policy_document" "log_agent" {
       "logs:PutLogEvents",
     ]
 
-    resources = [
-      "${aws_cloudwatch_log_group.default.*.arn}",
-    ]
+    resources = aws_cloudwatch_log_group.default.*.arn
   }
 
   statement {
-    actions = [
-      "${var.additional_permissions}",
-    ]
+    actions = var.additional_permissions
 
-    resources = [
-      "${aws_cloudwatch_log_group.default.*.arn}",
-    ]
+    resources = aws_cloudwatch_log_group.default.*.arn
   }
 }
+
