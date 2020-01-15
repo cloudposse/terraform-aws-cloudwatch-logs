@@ -1,5 +1,5 @@
 module "label" {
-  source     = "git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.3.3"
+  source     = "git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.16.0"
   namespace  = var.namespace
   name       = var.name
   stage      = var.stage
@@ -22,4 +22,3 @@ resource "aws_cloudwatch_log_stream" "default" {
   name           = element(var.stream_names, count.index)
   log_group_name = element(aws_cloudwatch_log_group.default.*.name, 0)
 }
-
