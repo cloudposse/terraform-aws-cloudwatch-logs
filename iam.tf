@@ -21,7 +21,7 @@ module "role" {
 }
 
 data "aws_iam_policy_document" "log_agent" {
-  statement {
+  statement = {
     actions = [
       "logs:DescribeLogGroups",
       "logs:DescribeLogStreams",
@@ -30,7 +30,7 @@ data "aws_iam_policy_document" "log_agent" {
     resources = ["*"]
   }
 
-  statement {
+  statement = {
     actions = [
       "logs:PutLogEvents",
     ]
@@ -40,7 +40,7 @@ data "aws_iam_policy_document" "log_agent" {
     ]
   }
 
-  statement {
+  statement = {
     actions = [
       "${var.additional_permissions}",
     ]
