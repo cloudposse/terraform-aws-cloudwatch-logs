@@ -41,9 +41,7 @@ data "aws_iam_policy_document" "log_agent" {
   }
 
   statement {
-    actions = [
-      "${var.additional_permissions}",
-    ]
+    actions = ${var.additional_permissions}
 
     resources = [
       "${aws_cloudwatch_log_group.default.*.arn}",
