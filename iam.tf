@@ -1,5 +1,5 @@
 module "role" {
-  source = "git::https://github.com/cloudposse/terraform-aws-iam-role.git?ref=tags/0.4.0"
+  source = "git::https://github.com/cloudposse/terraform-aws-iam-role.git?ref=tags/0.6.1"
 
   enabled = "${var.enabled}"
 
