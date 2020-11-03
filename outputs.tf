@@ -1,5 +1,5 @@
 output "log_group_arn" {
-  value       = "${join("", aws_cloudwatch_log_group.default.*.arn)}"
+  value       = "${aws_cloudwatch_log_group.default.arn}"
   description = "ARN of the log group"
 }
 
@@ -10,7 +10,7 @@ output "stream_arns" {
 
 output "log_group_name" {
   description = "Name of log group"
-  value       = "${join("", aws_cloudwatch_log_group.default.*.name)}"
+  value       = "${aws_cloudwatch_log_group.default.name}"
 }
 
 output "role_arn" {
