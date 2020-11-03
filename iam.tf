@@ -36,7 +36,7 @@ data "aws_iam_policy_document" "log_agent" {
     ]
 
     resources = [
-      "${element(aws_cloudwatch_log_group.default.*.name, 0)}"
+      "${aws_cloudwatch_log_group.default[*].name}"
     ]
   }
 
@@ -44,7 +44,7 @@ data "aws_iam_policy_document" "log_agent" {
     actions = "${var.additional_permissions}"
 
     resources = [
-      "${element(aws_cloudwatch_log_group.default.*.name, 0)}"
+      "${aws_cloudwatch_log_group.default[*].name}"
     ]
   }
 }
