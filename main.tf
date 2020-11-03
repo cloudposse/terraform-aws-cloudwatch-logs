@@ -18,5 +18,5 @@ resource "aws_cloudwatch_log_group" "default" {
 resource "aws_cloudwatch_log_stream" "default" {
   count          = "${length(var.stream_names) > 0 ? length(var.stream_names) : 0}"
   name           = "${element(var.stream_names, count.index)}"
-  log_group_name = "${aws_cloudwatch_log_group.default[*].name}"
+  log_group_name = "${aws_cloudwatch_log_group.default.name}"
 }
