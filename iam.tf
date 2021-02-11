@@ -1,23 +1,19 @@
 module "role" {
-  source = "git::https://github.com/cloudposse/terraform-aws-iam-role.git?ref=tags/0.4.0"
+  source  = "cloudposse/iam-role/aws"
+  version = "0.9.1"
+  
+  attributes = compact(concat(module.this.attributes, list("log"), list("group")))
+  
+  role_description   = "Cloudwatch ${module.this.id} logs role"
+  policy_description = "Cloudwatch ${module.this.id} logs policy"
 
-  enabled = "${var.enabled}"
-
-  namespace  = "${var.namespace}"
-  name       = "${var.name}"
-  stage      = "${var.stage}"
-  delimiter  = "${var.delimiter}"
-  attributes = "${compact(concat(var.attributes, list("log"), list("group")))}"
-  tags       = "${var.tags}"
-
-  role_description   = "Cloudwatch ${module.label.id} logs role"
-  policy_description = "Cloudwatch ${module.label.id} logs policy"
-
-  principals = "${var.principals}"
+  principals = var.principals
 
   policy_documents = [
     "${data.aws_iam_policy_document.log_agent.json}",
   ]
+
+  context = module.this.context
 }
 
 data "aws_iam_policy_document" "log_agent" {
