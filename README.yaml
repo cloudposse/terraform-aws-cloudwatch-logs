@@ -102,6 +102,11 @@ usage: |-
   }
   ```
 
+
+# Example usage
+examples: |-
+  Here's a complete [example](examples/complete/main.tf) of using this `terraform-aws-cloudwatch-logs` module.
+
 include:
   - "docs/targets.md"
   - "docs/terraform.md"

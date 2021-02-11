@@ -27,7 +27,7 @@
 
 -->
 
-Terraform module for creation of CloudWatch Log Streams and Log Groups for use with Fluentd.
+Terraform module for creation of CloudWatch Log Streams and Log Groups for use with Fluentd/Fluent-bit.
 
 
 ---
@@ -104,6 +104,10 @@ module "cloudwatch_log" {
 
 
 
+
+## Examples
+
+Here's a complete [example](examples/complete/main.tf) of using this `terraform-aws-cloudwatch-logs` module.
 
 
 
