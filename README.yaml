@@ -90,7 +90,7 @@ related:
 
 # Short description of this project
 description: |-
-  Terraform module for creation of CloudWatch Log Streams and Log Groups for use with Fluentd.
+  Terraform module for creation of CloudWatch Log Streams and Log Groups for use with Fluentd/Fluent-bit.
 
 # How to use this project
 usage: |-
