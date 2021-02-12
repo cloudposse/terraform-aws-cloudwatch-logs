@@ -33,8 +33,6 @@ func TestExamplesComplete(t *testing.T) {
 
 	terraform.InitAndApplyAndIdempotent(t, terraformOptions)
 
-	regionEnvVar := terraformOptions.Vars["region"]
-
 	// Run `terraform output` to get the value of an output variable
 	logGroupArn := terraform.Output(t, terraformOptions, "log_group_arn")
 	// Verify we're getting back the outputs we expect
@@ -48,5 +46,5 @@ func TestExamplesComplete(t *testing.T) {
 	// Run `terraform output` to get the value of an output variable
 	roleArn := terraform.Output(t, terraformOptions, "role_arn")
 	// Verify we're getting back the outputs we expect
-	assert.Contains(t, roleArn, "arn:aws:iam:us-east-1:")
+	assert.Contains(t, roleArn, "arn:aws:iam:")
 }

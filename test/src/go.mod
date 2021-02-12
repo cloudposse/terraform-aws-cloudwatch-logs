@@ -1,4 +1,4 @@
-module github.com/cloudposse/terraform-aws-cloudtrail-cloudwatch-alarms
+module github.com/cloudposse/terraform-aws-cloudwatch-logs
 
 go 1.15
 
