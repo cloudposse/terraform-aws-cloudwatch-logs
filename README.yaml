@@ -90,7 +90,7 @@ related:
 
 # Short description of this project
 description: |-
-  Terraform module for creation of CloudWatch Log Streams and Log Groups for use with Fluentd.
+  Terraform module for creation of CloudWatch Log Streams and Log Groups. Useful in combination with Fluentd/Fluent-bit for shipping logs.
 
 # How to use this project
 usage: |-
@@ -102,6 +102,11 @@ usage: |-
   }
   ```
 
+
+# Example usage
+examples: |-
+  Here's a complete [example](examples/complete/main.tf) of using this `terraform-aws-cloudwatch-logs` module.
+
 include:
   - "docs/targets.md"
   - "docs/terraform.md"
@@ -112,3 +117,5 @@ contributors:
     github: "goruha"
   - name: "Vladimir"
     github: "SweetOps"
+  - name: "Hugo Samayoa"
+    github: "htplbc"
