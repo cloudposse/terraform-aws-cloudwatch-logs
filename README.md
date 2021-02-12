@@ -27,7 +27,7 @@
 
 -->
 
-Terraform module for creation of CloudWatch Log Streams and Log Groups for use with Fluentd/Fluent-bit.
+Terraform module for creation of CloudWatch Log Streams and Log Groups. Useful in combination with Fluentd/Fluent-bit for shipping logs.
 
 
 ---
