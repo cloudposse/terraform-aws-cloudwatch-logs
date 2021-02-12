@@ -8,7 +8,7 @@ variable "retention_in_days" {
 }
 
 variable "stream_names" {
-  default     = []
-  type        = "list"
+  type        = list(string)
   description = "Names of streams"
+  default     = []
 }

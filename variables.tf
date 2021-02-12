@@ -10,12 +10,12 @@ variable "retention_in_days" {
 
 variable "stream_names" {
   default     = []
-  type        = "list"
+  type        = list(string)
   description = "Names of streams"
 }
 
 variable "principals" {
-  type        = "map"
+  type        = map
   description = "Map of service name as key and a list of ARNs to allow assuming the role as value. (e.g. map(`AWS`, list(`arn:aws:iam:::role/admin`)))"
 
   default = {
@@ -29,6 +29,6 @@ variable "additional_permissions" {
     "logs:DeleteLogStream",
   ]
 
-  type        = "list"
+  type        = list(string)
   description = "Additional permissions granted to assumed role"
 }

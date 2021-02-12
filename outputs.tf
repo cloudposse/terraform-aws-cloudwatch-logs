@@ -4,7 +4,7 @@ output "log_group_arn" {
 }
 
 output "stream_arns" {
-  value       = ["${aws_cloudwatch_log_stream.default.*.arn}"]
+  value       = [aws_cloudwatch_log_stream.default.*.arn]
   description = "ARN of the log stream"
 }
 

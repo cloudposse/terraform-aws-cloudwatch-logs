@@ -10,7 +10,7 @@ module "role" {
   principals = var.principals
 
   policy_documents = [
-    "${data.aws_iam_policy_document.log_agent.json}",
+    data.aws_iam_policy_document.log_agent.json,
   ]
 
   context = module.this.context
@@ -32,17 +32,15 @@ data "aws_iam_policy_document" "log_agent" {
     ]
 
     resources = [
-      "${aws_cloudwatch_log_group.default.*.arn}",
+      join("", aws_cloudwatch_log_group.default.*.arn),
     ]
   }
 
   statement {
-    actions = [
-      "${var.additional_permissions}",
-    ]
+    actions = var.additional_permissions
 
     resources = [
-      "${aws_cloudwatch_log_group.default.*.arn}",
+      join("", aws_cloudwatch_log_group.default.*.arn),
     ]
   }
 }
