@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 module "cloudwatch_log" {
-  source         = "../../"
+  source = "../../"
 
   stream_names = var.stream_names
 
