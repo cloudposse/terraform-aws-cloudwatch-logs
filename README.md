@@ -141,16 +141,16 @@ Available targets:
 
 | Name | Source | Version |
 |------|--------|---------|
-| role | cloudposse/iam-role/aws | 0.9.1 |
+| role | cloudposse/iam-role/aws | 0.9.3 |
 | this | cloudposse/label/null | 0.24.1 |
 
 ## Resources
 
 | Name |
 |------|
-| [aws_cloudwatch_log_group](https://registry.terraform.io/providers/hashicorp/aws/2.0/docs/resources/cloudwatch_log_group) |
-| [aws_cloudwatch_log_stream](https://registry.terraform.io/providers/hashicorp/aws/2.0/docs/resources/cloudwatch_log_stream) |
-| [aws_iam_policy_document](https://registry.terraform.io/providers/hashicorp/aws/2.0/docs/data-sources/iam_policy_document) |
+| [aws_cloudwatch_log_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_group) |
+| [aws_cloudwatch_log_stream](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_stream) |
+| [aws_iam_policy_document](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) |
 
 ## Inputs
 
