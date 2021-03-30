@@ -1,6 +1,6 @@
 module "role" {
   source  = "cloudposse/iam-role/aws"
-  version = "0.9.3"
+  version = "0.10.0"
 
   attributes = compact(concat(module.this.attributes, list("log"), list("group")))
 
