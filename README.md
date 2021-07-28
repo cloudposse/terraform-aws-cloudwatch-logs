@@ -1,3 +1,4 @@
+
 <!-- markdownlint-disable -->
 # terraform-aws-cloudwatch-logs [![Build Status](https://travis-ci.org/cloudposse/terraform-aws-cloudwatch-logs.svg?branch=master)](https://travis-ci.org/cloudposse/terraform-aws-cloudwatch-logs) [![Latest Release](https://img.shields.io/github/release/cloudposse/terraform-aws-cloudwatch-logs.svg)](https://github.com/cloudposse/terraform-aws-cloudwatch-logs/releases/latest) [![Slack Community](https://slack.cloudposse.com/badge.svg)](https://slack.cloudposse.com)
 <!-- markdownlint-restore -->
@@ -29,7 +30,6 @@
 
 Terraform module for creation of CloudWatch Log Streams and Log Groups. Useful in combination with Fluentd/Fluent-bit for shipping logs.
 
-
 ---
 
 This project is part of our comprehensive ["SweetOps"](https://cpco.io/sweetops) approach towards DevOps.
@@ -54,7 +54,6 @@ It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 
 
 We literally have [*hundreds of terraform modules*][terraform_modules] that are Open Source and well-maintained. Check them out!
-
 
 
 
@@ -197,6 +196,7 @@ Like this project? Please give it a ★ on [our GitHub](https://github.com/cloud
 Are you using this project or any of our other projects? Consider [leaving a testimonial][testimonial]. =)
 
 
+
 ## Related Projects
 
 Check out these related projects.
@@ -216,8 +216,6 @@ Check out these related projects.
 - [terraform-aws-lambda-cloudwatch-sns-alarms](https://github.com/cloudposse/terraform-aws-lambda-cloudwatch-sns-alarms) - Terraform module for creating a set of Lambda alarms and outputting to an endpoint
 - [terraform-aws-alb-target-group-cloudwatch-sns-alarms](https://github.com/cloudposse/terraform-aws-alb-target-group-cloudwatch-sns-alarms) - Terraform module to create CloudWatch Alarms on ALB Target level metrics.
 - [terraform-aws-sns-lambda-notify-slack](https://github.com/cloudposse/terraform-aws-sns-lambda-notify-slack) - Terraform module to provision a lambda function that subscribes to SNS and notifies to Slack.
-
-
 
 ## Help
 
