@@ -1,6 +1,6 @@
 module "role" {
   source  = "cloudposse/iam-role/aws"
-  version = "0.11.0"
+  version = "0.13.0"
 
   attributes = compact(concat(module.this.attributes, ["log", "group"]))
 
@@ -12,6 +12,8 @@ module "role" {
   policy_documents = [
     data.aws_iam_policy_document.log_agent.json,
   ]
+
+  permissions_boundary = var.permissions_boundary
 
   context = module.this.context
 }

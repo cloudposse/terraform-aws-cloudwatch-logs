@@ -15,7 +15,7 @@ variable "stream_names" {
 }
 
 variable "principals" {
-  type        = map
+  type        = map(any)
   description = "Map of service name as key and a list of ARNs to allow assuming the role as value. (e.g. map(`AWS`, list(`arn:aws:iam:::role/admin`)))"
 
   default = {
@@ -31,4 +31,10 @@ variable "additional_permissions" {
 
   type        = list(string)
   description = "Additional permissions granted to assumed role"
+}
+
+variable "permissions_boundary" {
+  type        = string
+  default     = ""
+  description = "ARN of the policy that is used to set the permissions boundary for the role"
 }
