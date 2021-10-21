@@ -23,6 +23,7 @@ variable "stream_names" {
 variable "iam_role_enabled" {
   type        = bool
   description = "Whether to create an IAM role which is able to write logs to the CloudWatch Logs log group"
+  default     = true
 }
 
 variable "principals" {
