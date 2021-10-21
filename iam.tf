@@ -1,6 +1,13 @@
+locals {
+  enabled = module.this.enabled
+  iam_role_enabled = local.enabled && var.iam_role_enabled
+}
+
 module "role" {
   source  = "cloudposse/iam-role/aws"
   version = "0.13.0"
+
+  enabled = local.iam_role_enabled
 
   attributes = compact(concat(module.this.attributes, ["log", "group"]))
 
@@ -10,7 +17,7 @@ module "role" {
   principals = var.principals
 
   policy_documents = [
-    data.aws_iam_policy_document.log_agent.json,
+    join("", data.aws_iam_policy_document.log_agent.*.json),
   ]
 
   permissions_boundary = var.permissions_boundary
@@ -19,6 +26,8 @@ module "role" {
 }
 
 data "aws_iam_policy_document" "log_agent" {
+  count = local.iam_role_enabled ? 1 : 0
+
   statement {
     actions = [
       "logs:DescribeLogGroups",
