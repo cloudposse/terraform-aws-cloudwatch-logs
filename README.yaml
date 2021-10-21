@@ -96,8 +96,12 @@ description: |-
 usage: |-
   ```terraform
   module "cloudwatch_log" {
-    namespace    = "${var.namespace}"
-    stage        = "${var.stage}"
+    # Cloud Posse recommends pinning every module to a specific version
+    # version = "x.x.x"
+
+    namespace    = "eg"
+    stage        = "prod"
+    name         = "app"
     stream_names = ["kafka-instance-1", "kafka-instance-2"]
   }
   ```
@@ -119,3 +123,5 @@ contributors:
     github: "SweetOps"
   - name: "Hugo Samayoa"
     github: "htplbc"
+  - name: "Yonatan Koren"
+    github: "korenyoni"

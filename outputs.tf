@@ -4,8 +4,8 @@ output "log_group_arn" {
 }
 
 output "stream_arns" {
-  value       = [aws_cloudwatch_log_stream.default.*.arn]
-  description = "ARN of the log stream"
+  value       = aws_cloudwatch_log_stream.default.*.arn
+  description = "ARNs of the log streams"
 }
 
 output "log_group_name" {
@@ -15,10 +15,10 @@ output "log_group_name" {
 
 output "role_arn" {
   value       = module.role.arn
-  description = "ARN of role to assume"
+  description = "ARN of the IAM role"
 }
 
 output "role_name" {
   value       = module.role.name
-  description = "Name of role to assume"
+  description = "Name of the IAM role"
 }
