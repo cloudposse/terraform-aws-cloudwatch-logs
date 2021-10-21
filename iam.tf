@@ -1,5 +1,5 @@
 locals {
-  enabled = module.this.enabled
+  enabled          = module.this.enabled
   iam_role_enabled = local.enabled && var.iam_role_enabled
 }
 
