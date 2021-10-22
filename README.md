@@ -94,7 +94,8 @@ The table below correctly indicates which inputs are required.
 
 
 ```terraform
-module "cloudwatch_log" {
+module "cloudwatch_logs" {
+  source  = "cloudposse/cloudwatch-logs/aws"
   # Cloud Posse recommends pinning every module to a specific version
   # version = "x.x.x"
 

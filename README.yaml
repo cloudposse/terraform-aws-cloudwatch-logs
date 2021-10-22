@@ -95,7 +95,8 @@ description: |-
 # How to use this project
 usage: |-
   ```terraform
-  module "cloudwatch_log" {
+  module "cloudwatch_logs" {
+    source  = "cloudposse/cloudwatch-logs/aws"
     # Cloud Posse recommends pinning every module to a specific version
     # version = "x.x.x"
 
