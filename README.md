@@ -133,18 +133,19 @@ Available targets:
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 2.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 2.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
+| <a name="module_log_group_label"></a> [log\_group\_label](#module\_log\_group\_label) | cloudposse/label/null | 0.25.0 |
 | <a name="module_role"></a> [role](#module\_role) | cloudposse/iam-role/aws | 0.13.0 |
 | <a name="module_this"></a> [this](#module\_this) | cloudposse/label/null | 0.25.0 |
 
@@ -356,8 +357,8 @@ Check out [our other projects][github], [follow us on twitter][twitter], [apply 
 ### Contributors
 
 <!-- markdownlint-disable -->
-|  [![Igor Rodionov][goruha_avatar]][goruha_homepage]<br/>[Igor Rodionov][goruha_homepage] | [![Vladimir][SweetOps_avatar]][SweetOps_homepage]<br/>[Vladimir][SweetOps_homepage] | [![Hugo Samayoa][htplbc_avatar]][htplbc_homepage]<br/>[Hugo Samayoa][htplbc_homepage] | [![Yonatan Koren][korenyoni_avatar]][korenyoni_homepage]<br/>[Yonatan Koren][korenyoni_homepage] |
-|---|---|---|---|
+|  [![Igor Rodionov][goruha_avatar]][goruha_homepage]<br/>[Igor Rodionov][goruha_homepage] | [![Vladimir][SweetOps_avatar]][SweetOps_homepage]<br/>[Vladimir][SweetOps_homepage] | [![Hugo Samayoa][htplbc_avatar]][htplbc_homepage]<br/>[Hugo Samayoa][htplbc_homepage] | [![Yonatan Koren][korenyoni_avatar]][korenyoni_homepage]<br/>[Yonatan Koren][korenyoni_homepage] | [![RB][nitrocode_avatar]][nitrocode_homepage]<br/>[RB][nitrocode_homepage] |
+|---|---|---|---|---|
 <!-- markdownlint-restore -->
 
   [goruha_homepage]: https://github.com/goruha
@@ -368,6 +369,8 @@ Check out [our other projects][github], [follow us on twitter][twitter], [apply 
   [htplbc_avatar]: https://img.cloudposse.com/150x150/https://github.com/htplbc.png
   [korenyoni_homepage]: https://github.com/korenyoni
   [korenyoni_avatar]: https://img.cloudposse.com/150x150/https://github.com/korenyoni.png
+  [nitrocode_homepage]: https://github.com/nitrocode
+  [nitrocode_avatar]: https://img.cloudposse.com/150x150/https://github.com/nitrocode.png
 
 [![README Footer][readme_footer_img]][readme_footer_link]
 [![Beacon][beacon]][website]

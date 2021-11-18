@@ -4,18 +4,19 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 2.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 2.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
+| <a name="module_log_group_label"></a> [log\_group\_label](#module\_log\_group\_label) | cloudposse/label/null | 0.25.0 |
 | <a name="module_role"></a> [role](#module\_role) | cloudposse/iam-role/aws | 0.13.0 |
 | <a name="module_this"></a> [this](#module\_this) | cloudposse/label/null | 0.25.0 |
 
