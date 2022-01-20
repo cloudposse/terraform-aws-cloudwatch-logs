@@ -4,7 +4,7 @@ locals {
 
 module "role" {
   source  = "cloudposse/iam-role/aws"
-  version = "0.14.1"
+  version = "0.15.0"
 
   enabled = local.iam_role_enabled
 
