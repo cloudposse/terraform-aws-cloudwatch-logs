@@ -20,7 +20,7 @@ module "role" {
   ]
 
   permissions_boundary = var.permissions_boundary
-  tags_enabled         = var.role_tags_enabled
+  tags_enabled         = var.iam_tags_enabled
 
 
   context = module.this.context
