@@ -51,8 +51,8 @@ variable "permissions_boundary" {
   description = "ARN of the policy that is used to set the permissions boundary for the IAM role"
 }
 
-variable "role_tags_enabled" {
+variable "tags_enabled" {
   type        = string
-  description = "Enable/disable tags on IAM roles"
+  description = "Enable/disable tags on IAM roles and policies"
   default     = true
 }

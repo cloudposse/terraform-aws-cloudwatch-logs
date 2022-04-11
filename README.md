@@ -146,7 +146,7 @@ Available targets:
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_log_group_label"></a> [log\_group\_label](#module\_log\_group\_label) | cloudposse/label/null | 0.25.0 |
-| <a name="module_role"></a> [role](#module\_role) | cloudposse/iam-role/aws | 0.15.0 |
+| <a name="module_role"></a> [role](#module\_role) | cloudposse/iam-role/aws | 0.16.1 |
 | <a name="module_this"></a> [this](#module\_this) | cloudposse/label/null | 0.25.0 |
 
 ## Resources
@@ -185,6 +185,7 @@ Available targets:
 | <a name="input_stage"></a> [stage](#input\_stage) | ID element. Usually used to indicate role, e.g. 'prod', 'staging', 'source', 'build', 'test', 'deploy', 'release' | `string` | `null` | no |
 | <a name="input_stream_names"></a> [stream\_names](#input\_stream\_names) | Names of streams | `list(string)` | `[]` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Additional tags (e.g. `{'BusinessUnit': 'XYZ'}`).<br>Neither the tag keys nor the tag values will be modified by this module. | `map(string)` | `{}` | no |
+| <a name="input_tags_enabled"></a> [tags\_enabled](#input\_tags\_enabled) | Enable/disable tags on IAM roles and policies | `string` | `true` | no |
 | <a name="input_tenant"></a> [tenant](#input\_tenant) | ID element \_(Rarely used, not included by default)\_. A customer identifier, indicating who this instance of a resource is for | `string` | `null` | no |
 
 ## Outputs
