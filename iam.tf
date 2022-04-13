@@ -4,7 +4,7 @@ locals {
 
 module "role" {
   source  = "cloudposse/iam-role/aws"
-  version = "0.15.0"
+  version = "0.16.1"
 
   enabled = local.iam_role_enabled
 
@@ -20,6 +20,8 @@ module "role" {
   ]
 
   permissions_boundary = var.permissions_boundary
+  tags_enabled         = var.iam_tags_enabled
+
 
   context = module.this.context
 }
