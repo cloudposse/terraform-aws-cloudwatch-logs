@@ -4,7 +4,7 @@ locals {
 
 module "role" {
   source  = "cloudposse/iam-role/aws"
-  version = "0.16.1"
+  version = "0.16.2"
 
   enabled = local.iam_role_enabled
 
@@ -52,7 +52,7 @@ data "aws_iam_policy_document" "log_agent" {
     actions = var.additional_permissions
 
     resources = [
-      join("", aws_cloudwatch_log_group.default.*.arn),
+      "${join("", aws_cloudwatch_log_group.default.*.arn)}:*",
     ]
   }
 }
