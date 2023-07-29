@@ -17,7 +17,7 @@
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_log_group_label"></a> [log\_group\_label](#module\_log\_group\_label) | cloudposse/label/null | 0.25.0 |
-| <a name="module_role"></a> [role](#module\_role) | cloudposse/iam-role/aws | 0.16.2 |
+| <a name="module_role"></a> [role](#module\_role) | cloudposse/iam-role/aws | 0.19.0 |
 | <a name="module_this"></a> [this](#module\_this) | cloudposse/label/null | 0.25.0 |
 
 ## Resources
