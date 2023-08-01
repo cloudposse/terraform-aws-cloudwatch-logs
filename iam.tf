@@ -44,7 +44,7 @@ data "aws_iam_policy_document" "log_agent" {
     ]
 
     resources = [
-      join("", aws_cloudwatch_log_group.default.*.arn),
+      "${join("", aws_cloudwatch_log_group.default[*].arn)}:*",
     ]
   }
 
@@ -52,7 +52,7 @@ data "aws_iam_policy_document" "log_agent" {
     actions = var.additional_permissions
 
     resources = [
-      "${join("", aws_cloudwatch_log_group.default.*.arn)}:*",
+      "${join("", aws_cloudwatch_log_group.default[*].arn)}:*",
     ]
   }
 }
