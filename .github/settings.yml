@@ -1,0 +1,7 @@
+# Upstream changes from _extends are only recognized when modifications are made to this file in the default branch.
+_extends: .github
+repository:
+  name: terraform-aws-cloudwatch-logs
+  description: Terraform Module to Provide a CloudWatch Logs Endpoint
+  homepage: https://cloudposse.com/accelerate
+  topics: cloudwatch, cloudwatch-logs, terraform, terraform-module, aws
