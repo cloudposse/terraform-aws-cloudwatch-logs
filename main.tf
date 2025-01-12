@@ -7,7 +7,7 @@ module "log_group_label" {
   version = "0.25.0"
 
   # Allow forward slashes
-  regex_replace_chars = "/[^a-zA-Z0-9-\\/]/"
+  regex_replace_chars = "/[^a-zA-Z0-9-_\\/]/"
 
   context = module.this.context
 }
