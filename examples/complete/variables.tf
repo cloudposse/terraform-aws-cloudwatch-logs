@@ -1,10 +1,6 @@
 variable "region" {
-  type = string
-}
-
-variable "retention_in_days" {
-  description = "Number of days you want to retain log events in the log group"
-  default     = "30"
+  type        = string
+  description = "AWS region"
 }
 
 variable "stream_names" {
