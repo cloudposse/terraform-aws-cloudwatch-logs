@@ -25,7 +25,7 @@ func TestExamplesComplete(t *testing.T) {
 		VarFiles:     []string{"fixtures.us-east-2.tfvars"},
 		Vars: map[string]interface{}{
 			"attributes": attributes,
-			"region":     "us-east-1",
+			"region":     "us-east-2",
 		},
 	}
 
