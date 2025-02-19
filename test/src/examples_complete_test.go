@@ -22,7 +22,7 @@ func TestExamplesComplete(t *testing.T) {
 	terraformOptions := &terraform.Options{
 		TerraformDir: "../../examples/complete",
 		Upgrade:      true,
-		VarFiles:     []string{"fixtures.us-east-1.tfvars"},
+		VarFiles:     []string{"fixtures.us-east-2.tfvars"},
 		Vars: map[string]interface{}{
 			"attributes": attributes,
 			"region":     "us-east-1",
@@ -36,7 +36,7 @@ func TestExamplesComplete(t *testing.T) {
 	// Run `terraform output` to get the value of an output variable
 	logGroupArn := terraform.Output(t, terraformOptions, "log_group_arn")
 	// Verify we're getting back the outputs we expect
-	assert.Contains(t, logGroupArn, "arn:aws:logs:us-east-1:")
+	assert.Contains(t, logGroupArn, "arn:aws:logs:us-east-2:")
 
 	// Run `terraform output` to get the value of an output variable
 	streamArns := terraform.Output(t, terraformOptions, "stream_arns")
