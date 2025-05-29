@@ -3,7 +3,7 @@
 <!-- markdownlint-disable -->
 <a href="https://cpco.io/homepage"><img src="https://github.com/cloudposse/terraform-aws-cloudwatch-logs/blob/main/.github/banner.png?raw=true" alt="Project Banner"/></a><br/>
     <p align="right">
-<a href="https://github.com/cloudposse/terraform-aws-cloudwatch-logs/releases/latest"><img src="https://img.shields.io/github/release/cloudposse/terraform-aws-cloudwatch-logs.svg?style=for-the-badge" alt="Latest Release"/></a><a href="https://github.com/cloudposse/terraform-aws-cloudwatch-logs/commits"><img src="https://img.shields.io/github/last-commit/cloudposse/terraform-aws-cloudwatch-logs.svg?style=for-the-badge" alt="Last Updated"/></a><a href="https://slack.cloudposse.com"><img src="https://slack.cloudposse.com/for-the-badge.svg" alt="Slack Community"/></a></p>
+<a href="https://github.com/cloudposse/terraform-aws-cloudwatch-logs/releases/latest"><img src="https://img.shields.io/github/release/cloudposse/terraform-aws-cloudwatch-logs.svg?style=for-the-badge" alt="Latest Release"/></a><a href="https://github.com/cloudposse/terraform-aws-cloudwatch-logs/commits"><img src="https://img.shields.io/github/last-commit/cloudposse/terraform-aws-cloudwatch-logs.svg?style=for-the-badge" alt="Last Updated"/></a><a href="https://cloudposse.com/slack"><img src="https://slack.cloudposse.com/for-the-badge.svg" alt="Slack Community"/></a></p>
 <!-- markdownlint-restore -->
 
 <!--
@@ -78,18 +78,6 @@ Here's a complete [example](examples/complete/main.tf) of using this `terraform-
 
 
 <!-- markdownlint-disable -->
-## Makefile Targets
-```text
-Available targets:
-
-  help                                Help screen
-  help/all                            Display help for all targets
-  help/short                          This help short screen
-  lint                                Lint terraform code
-
-```
-<!-- markdownlint-restore -->
-<!-- markdownlint-disable -->
 ## Requirements
 
 | Name | Version |
@@ -160,6 +148,11 @@ Available targets:
 | <a name="output_role_name"></a> [role\_name](#output\_role\_name) | Name of the IAM role |
 | <a name="output_stream_arns"></a> [stream\_arns](#output\_stream\_arns) | ARNs of the log streams |
 <!-- markdownlint-restore -->
+
+
+
+
+
 
 
 ## Related Projects
